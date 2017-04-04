@@ -11,7 +11,11 @@ app.use(bodyParser.json());
 
 
 app.get('/students',(req,res)=>{
-   res.send("get all method call");
+   Student.find().then((students)=>{
+       res.send({students})
+   },(e)=>{
+       res.status(404).send(e);
+   });
 });
 
 app.post('/students',(req,res)=>{
