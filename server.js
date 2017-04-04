@@ -49,7 +49,20 @@ app.get('/students/:studentId', (req, res)=> {
     });
 });
 app.put('/students/:studentId', (req, res)=> {
-    res.send("get a single student update  method call");
+    var id = req.params.studentId;
+    if (!ObjectID.isValid(id)) {
+        return res.status(404).send("id is not valid");
+    }
+
+    Student.findByIdAndUpdate(id, { $set: req.body}, { new: true }).then((students)=> {
+        if (!students) {
+            return res.status(404).send("no data found");
+        }
+        res.send({students})
+    }).catch((e)=> {
+        res.status(404).send(e);
+    });
+
 });
 app.delete('/students/:studentId', (req, res)=> {
     var id = req.params.studentId;
