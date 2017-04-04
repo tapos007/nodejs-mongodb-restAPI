@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var {mongoose} = require('./mongoose');
 
 var app = express();
 // parse application/json
@@ -20,7 +21,7 @@ app.get('/students/:studentId',(req,res)=>{
 app.put('/students/:studentId',(req,res)=>{
     res.send("get a single student update  method call");
 });
-app.del('/students/:studentId',(req,res)=>{
+app.delete('/students/:studentId',(req,res)=>{
     res.send("get a single student delete method call");
 });
 
