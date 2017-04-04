@@ -52,9 +52,20 @@ app.put('/students/:studentId', (req, res)=> {
     res.send("get a single student update  method call");
 });
 app.delete('/students/:studentId', (req, res)=> {
-    res.send("get a single student delete method call");
+    var id = req.params.studentId;
+    if (!ObjectID.isValid(id)) {
+        return res.status(404).send("id is not valid");
+    }
+    Student.findByIdAndRemove(id).then((students)=> {
+        if (!students) {
+            return res.status(404).send("no data found");
+        }
+        res.send({students})
+    }).catch((e)=> {
+        res.status(404).send(e);
+    });
 });
 
 app.listen(3000, ()=> {
-    console.log(`connected successfully in port`);
+    console.log('port start')
 });
