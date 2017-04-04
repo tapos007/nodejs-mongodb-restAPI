@@ -28,3 +28,7 @@ var Student = mongoose.model('Student', {
     }
 
 });
+
+module.exports = {
+    Student
+};
