@@ -7,6 +7,8 @@ var {ObjectID} = require('mongodb');
 var {Student} = require('./model/student');
 
 var app = express();
+
+app.set('port', (process.env.PORT || 3000));
 // parse application/json
 app.use(bodyParser.json());
 
@@ -79,6 +81,6 @@ app.delete('/students/:studentId', (req, res)=> {
     });
 });
 
-app.listen(3000, ()=> {
-    console.log('port start')
+app.listen(app.get('port'), function() {
+    console.log('Node app is running on port', app.get('port'));
 });
