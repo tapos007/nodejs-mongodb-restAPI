@@ -8,10 +8,15 @@ var {Student} = require('./model/student');
 
 var app = express();
 
+
+
 app.set('port', (process.env.PORT || 3000));
 // parse application/json
 app.use(bodyParser.json());
 
+app.get('/',(req,res)=>{
+   res.render('index');
+});
 
 app.get('/students', (req, res)=> {
     Student.find().then((students)=> {
@@ -20,6 +25,8 @@ app.get('/students', (req, res)=> {
         res.status(404).send(e);
     });
 });
+
+
 
 app.post('/students', (req, res)=> {
     var student = new Student(

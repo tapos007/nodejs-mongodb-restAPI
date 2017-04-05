@@ -4,7 +4,7 @@
 
 ## Student Insert API
 
-####[http://gg-logic.dev/api/v1/profiles/{profile_slug}/polls/](http://gg-logic.dev/api/v1/profile/profle_slug/polls/)
+####[https://node-express-mongo-crud.herokuapp.com/students/](https://node-express-mongo-crud.herokuapp.com/students/)
 
 ####Request type - POST
 
@@ -38,7 +38,7 @@ address | text | address of student | NO
 
 ## Get All Students API
 
-####[http://gg-logic.dev/api/v1/profiles/{profile_slug}/polls/](http://gg-logic.dev/api/v1/profile/profle_slug/polls/)
+####[https://node-express-mongo-crud.herokuapp.com/students/](https://node-express-mongo-crud.herokuapp.com/students/)
 
 ####Request type - GET
 
@@ -77,7 +77,7 @@ form data | Data Type | Description | Required
 
 ## Get a Single Student
 
-####[http://gg-logic.dev/api/v1/profiles/{profile_slug}/polls/{poll_id}](http://gg-logic.dev/api/v1/profile/profle_slug/polls/{poll_id})
+####[https://node-express-mongo-crud.herokuapp.com/students/{studentID}](https://node-express-mongo-crud.herokuapp.com/students/{studentID})
 
 ####Request type - GET
 
@@ -105,7 +105,7 @@ studentID | string | unique id of student | Yes
 
 ## Student Update API
 
-####[http://gg-logic.dev/api/v1/profiles/{profile_slug}/polls/{poll_id}](http://gg-logic.dev/api/v1/profile/profle_slug/polls/{poll_id})
+####[https://node-express-mongo-crud.herokuapp.com/students/{studentID}](https://node-express-mongo-crud.herokuapp.com/students/{studentID})
 
 ####Request type - PUT
 
@@ -143,7 +143,7 @@ active | boolean | 0/1 (off/on) | NO
 
 ## Student Delete API
 
-####[http://gg-logic.dev/api/v1/profiles/{profile_slug}/polls/{poll_id}](http://gg-logic.dev/api/v1/profile/profle_slug/polls/{poll_id})
+####[https://node-express-mongo-crud.herokuapp.com/students/{studentID}](https://node-express-mongo-crud.herokuapp.com/students/{studentID})
 
 ####Request type - DELETE
 
